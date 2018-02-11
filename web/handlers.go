@@ -6,4 +6,5 @@ import (
 
 func Strap(router gin.IRouter) {
 	router.GET("/", handlerWeChatGet)
+	router.POST("/", handlerWeChatPost)
 }

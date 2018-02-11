@@ -9,16 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// const (
-// 	token = "testToken"
-// )
-
-// func testhandler(w http.ResponseWriter, r *http.Request) {
-// 	fmt.Fprintf(w, "hello world! name: %s", r.URL.Path[1:])
-// }
-
-// func handlerWechatGet()
-
 func main() {
 	var router *gin.Engine
 	router = gin.Default()
