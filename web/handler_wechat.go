@@ -2,6 +2,7 @@ package web
 
 import (
 	"crypto/sha1"
+	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"io"
@@ -13,6 +14,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"fhyx/Wechat/models"
+	"fhyx/Wechat/util"
 )
 
 const wx_token = "testToken"
