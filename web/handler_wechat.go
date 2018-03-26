@@ -2,7 +2,6 @@ package web
 
 import (
 	"crypto/sha1"
-	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"io"
@@ -14,7 +13,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"fhyx/Wechat/models"
-	"fhyx/Wechat/util"
 )
 
 const wx_token = "testToken"
@@ -53,7 +51,7 @@ func handlerWeChatGet(c *gin.Context) {
 		log.Println("access unmarshal err:", err)
 		return
 	}
-	log.Println("wa:", accessResp)
+	// log.Println("wa:", accessResp)
 	//向微信服务器发POST
 	postData, err := util.PostAccessToken(accessResp.AccessToken)
 	if err != nil {
@@ -66,8 +64,7 @@ func handlerWeChatGet(c *gin.Context) {
 		log.Println("access_return unmarshal err:", err)
 		return
 	}
-	log.Println("gua:", accessReturn)
-	//
+	// log.Println("gua:", accessReturn)
 
 	if hashcode == signature && echostr != "" {
 		c.Writer.Write([]byte(echostr))
